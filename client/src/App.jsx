@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  createBrowserRouter,
-  Outlet,
-  Route,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
@@ -12,6 +7,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Single from "./pages/Single";
 import Write from "./pages/Write";
+import "./style.scss";
 const Layout = () => {
   return (
     <>
