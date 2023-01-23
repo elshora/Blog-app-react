@@ -1,7 +1,24 @@
 $lightGreen: #b9e7e7;
-.app {
+%flex-centering {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+%h-centering {
+  display: flex;
+  justify-content: center;
+}
+%v-centering {
+  display: flex;
+  align-items: center;
+}
+%hover-style {
+  background-color: white;
+  color: teal;
+  border: 1px solid teal;
+}
+.app {
+  @extend %h-centering;
   .container {
     width: 1024px;
     .link {
@@ -15,10 +32,8 @@ $lightGreen: #b9e7e7;
     }
     // login & register
     .auth {
-      display: flex;
+      @extend %flex-centering;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
       height: 100vh;
       background-color: $lightGreen;
       h1 {
@@ -59,28 +74,22 @@ $lightGreen: #b9e7e7;
     .navbar {
       padding: 10px 0;
       .container {
-        display: flex;
+        @extend %h-centering;
         justify-content: space-between;
-        align-items: center;
         .logo {
+          @extend %flex-centering;
           background-color: $lightGreen;
           height: 50px;
           width: 50px;
           border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
           border: 1px solid white;
           transition: 0.3s;
           &:hover {
-            background-color: white;
-            color: teal;
-            border: 1px solid teal;
+            @extend %hover-style;
           }
         }
         .links {
-          display: flex;
-          align-items: center;
+          @extend %v-centering;
           gap: 10px;
           h6 {
             font-size: 16px;
@@ -98,15 +107,11 @@ $lightGreen: #b9e7e7;
             height: 50px;
             width: 50px;
             border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @extend %flex-centering;
             border: 1px solid white;
             transition: 0.3s;
             &:hover {
-              background-color: white;
-              color: teal;
-              border: 1px solid teal;
+              @extend %hover-style;
             }
           }
         }
