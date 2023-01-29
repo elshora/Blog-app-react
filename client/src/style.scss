@@ -18,9 +18,7 @@ $lightGreen: #b9e7e7;
   border: 1px solid teal;
 }
 .app {
-  @extend %h-centering;
-  .container {
-    width: 1024px;
+  .main {
     .link {
       text-decoration: none;
       color: inherit;
@@ -36,8 +34,7 @@ $lightGreen: #b9e7e7;
       flex-direction: column;
       height: 100vh;
       background-color: $lightGreen;
-      h1 {
-        font-size: 20px;
+      h2 {
         color: teal;
         padding: 10px;
       }
@@ -46,7 +43,7 @@ $lightGreen: #b9e7e7;
         flex-direction: column;
         padding: 10px;
         background-color: white;
-        width: 200px;
+        width: 250px;
         gap: 20px;
         input {
           padding: 10px;
@@ -64,6 +61,7 @@ $lightGreen: #b9e7e7;
           color: red;
           font-size: 12px;
           text-align: center;
+          margin-bottom: 0;
         }
         span {
           font-size: 12px;
@@ -71,52 +69,7 @@ $lightGreen: #b9e7e7;
         }
       }
     }
-    .navbar {
-      padding: 10px 0;
-      .container {
-        @extend %h-centering;
-        justify-content: space-between;
-        .logo {
-          @extend %flex-centering;
-          background-color: $lightGreen;
-          height: 50px;
-          width: 50px;
-          border-radius: 50%;
-          border: 1px solid white;
-          transition: 0.3s;
-          &:hover {
-            @extend %hover-style;
-          }
-        }
-        .links {
-          @extend %v-centering;
-          gap: 10px;
-          h6 {
-            font-size: 16px;
-            font-weight: 300;
-          }
-          span {
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 500;
-          }
-          .write {
-            text-decoration: none;
-            color: inherit;
-            background-color: $lightGreen;
-            height: 50px;
-            width: 50px;
-            border-radius: 50%;
-            @extend %flex-centering;
-            border: 1px solid white;
-            transition: 0.3s;
-            &:hover {
-              @extend %hover-style;
-            }
-          }
-        }
-      }
-    }
+
     footer {
       background-color: $lightGreen;
       color: gray;

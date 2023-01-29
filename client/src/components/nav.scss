@@ -1,0 +1,46 @@
+$lightGreen: #b9e7e7;
+%flex-centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+%hover-style {
+  background-color: white;
+  color: teal;
+  border: 1px solid teal;
+}
+.navbar {
+  .logo {
+    @extend %flex-centering;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    img {
+      width: 100%;
+    }
+  }
+
+  h6 {
+    font-size: 16px;
+    font-weight: 300;
+  }
+  span {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .write {
+    text-decoration: none;
+    color: inherit;
+    background-color: $lightGreen;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    @extend %flex-centering;
+    border: 1px solid white;
+    transition: 0.3s;
+    &:hover {
+      @extend %hover-style;
+    }
+  }
+}

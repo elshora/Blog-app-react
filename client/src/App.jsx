@@ -8,6 +8,8 @@ import Register from "./pages/Register";
 import Single from "./pages/Single";
 import Write from "./pages/Write";
 import "./style.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 const Layout = () => {
   return (
     <>
@@ -33,7 +35,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div className="app">
-      <div className="container">
+      <div className="main">
         <RouterProvider router={router} />
       </div>
     </div>
