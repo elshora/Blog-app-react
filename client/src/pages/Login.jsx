@@ -52,7 +52,9 @@ export default function Login() {
           placeholder="password"
           onChange={onChangeHandler}
         />
-        <button onClick={handelSubmit}>Login</button>
+        <button onClick={handelSubmit}>
+          {isLoading ? "loading..." : "login"}
+        </button>
         <div className="d-flex flex-column text-center">
           {isError && <p>{message}</p>}
           <span>Don't you have an account?</span>

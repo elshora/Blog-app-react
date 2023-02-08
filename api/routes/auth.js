@@ -21,18 +21,19 @@ router.post("/register", async (req, res) => {
 
 // login
 router.post("/login", async (req, res) => {
-  const { email, password } = req.body;
-  if (!email || !password) {
-    res.status(400);
-    throw new Error("Please add all fields");
-  }
-  const user = await User.findOne({ email });
-  if (user && (await bcrypt.compare(password, user.password))) {
+  try {
+    if (req.body.password == null || req.body.username == null) {
+      res.status(400).json("Wrong Info");
+    }
+    const user = await User.findOne({ username: req.body.username });
+    !user && res.status(400).json("Wrong Info");
+    const validated = await bcrypt.compare(req.body.password, user.password);
+    if (!validated) res.status(400).json("Wrong Info");
     const { password, ...other } = user._doc;
     res.status(200).json(other);
-  } else {
-    res.status(400);
-    throw new Error("Invalid password or email");
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
   }
 });
 module.exports = router;

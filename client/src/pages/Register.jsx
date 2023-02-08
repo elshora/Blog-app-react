@@ -65,7 +65,9 @@ export default function Register() {
           required
           onChange={onChangeHandler}
         />
-        <button onClick={handelSubmit}>Register</button>
+        <button onClick={handelSubmit}>
+          {isLoading ? "loading..." : "register"}
+        </button>
         <div className="d-flex flex-column gap-1">
           {isError && <p>{message}</p>}
           <span>Already have an account?</span>

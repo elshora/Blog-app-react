@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-const authAPI = "http://localhost:4000/api/auth/";
 const user = JSON.parse(localStorage.getItem("user"));
 
 const initialState = {
@@ -32,7 +31,6 @@ export const register = createAsyncThunk(
           error.response.data.message) ||
         error.message ||
         error.toString();
-      console.log(message);
       return rejectWithValue(message);
     }
   }

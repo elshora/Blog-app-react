@@ -1,9 +1,16 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import logo from "../img/logo.png";
+import { logout } from "../store/slices/authSlice";
 import "./nav.scss";
 
 export default function NavBar() {
+  const { user } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch(logout());
+  };
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -60,8 +67,8 @@ export default function NavBar() {
             </ul>
           </div>
           <div className="d-flex flex-row justify-content-end align-items-center gap-3">
-            <span>Mahmoud</span>
-            <span>Logout</span>
+            {user ? <span> {user} </span> : null}
+            <span onClick={handleLogout}>Logout</span>
             <Link to="write" className="write">
               Write
             </Link>

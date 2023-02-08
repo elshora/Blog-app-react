@@ -5,20 +5,22 @@ import "react-quill/dist/quill.snow.css";
 
 export default function Write() {
   const [value, setValue] = useState("");
-  console.log(value);
   return (
     <>
       <div className="container my-5">
         <h2 className="display-5 mb-5 ">Type your Ideas</h2>
         <div className="row">
           <div className=" col-12 col-md-9 content ">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-default">
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span
+                  className="input-group-text"
+                  id="inputGroup-sizing-default"
+                >
                   Title
                 </span>
               </div>
-              <input type="text" class="form-control" aria-label="Title" />
+              <input type="text" className="form-control" aria-label="Title" />
             </div>
             <div className="editor my-3">
               <ReactQuill theme="snow" value={value} onChange={setValue} />
@@ -26,14 +28,14 @@ export default function Write() {
           </div>
           <div className="col-12 col-md-3 py-3 menu border">
             <h5 className="fs-4 text-capitalize">publish</h5>
-            <div class="input-group mb-3">
-              <div class="custom-file mb-3 ">
-                <input type="file" class="custom-file-input" />
+            <div className="input-group mb-3">
+              <div className="custom-file mb-3 ">
+                <input type="file" className="custom-file-input" />
               </div>
 
-              <div class="input-group-prepend">
+              <div className="input-group-prepend">
                 <h3 className="fs-5">Category</h3>
-                <div class="input-group-text d-flex flex-column align-items-start ">
+                <div className="input-group-text d-flex flex-column align-items-start ">
                   <div>
                     <input
                       type="radio"
